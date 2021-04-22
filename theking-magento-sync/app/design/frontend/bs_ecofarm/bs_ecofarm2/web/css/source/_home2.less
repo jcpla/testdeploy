@@ -1,0 +1,230 @@
+.top-nav {
+	border-top: none;
+	.navigation {
+		text-align: center;
+	}
+}
+.header_container.head-logo {
+	margin-bottom: 0;
+}
+.custommenu.navigation .level0 {
+    padding: 20px 0 35px 0;
+}
+
+.testimo-slider {
+	.pt-testimonial-container{
+		background-size: cover;
+	}
+}
+.testimo-slider .pt-testimonial .info .job {
+	color: @bkg;
+}
+.img_friendly {
+	position: relative;
+	.banner-home2 {
+		text-align: center;
+	    text-align: center;
+	    position: absolute;
+	    top: 80px;
+	    left: 50%;
+	    -moz-transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+		h3 {
+			font-size: 40px;
+			color: @menucolor;
+		}
+		p {
+			font-size: 14px;
+			color: @searchcatcolor;
+		}
+		.content {
+		    display: grid;
+		    grid-template-columns: repeat(2,1fr);
+		    grid-template-rows: repeat(3,1fr);
+		    margin-top: 50px;
+			>div {
+				padding: 22px 50px;
+				min-width: 350px;
+				border-radius: 30px;
+				background: white;
+				font-size: 20px;
+				color: @menucolor;
+				margin-top: 60px;
+			    position: relative;
+		        font-weight: 700;
+			    &:hover {
+			    	background: @primarycolor;
+			    	color: white;
+			    }
+				&:after {
+					content: "\e6b8";
+				    font-family: Pe-icon-7-stroke;
+				    color: white;
+				    font-size: 32px;
+					width: 66px;
+					height: 66px;
+					line-height: 66px;
+					background: @primarycolor;
+					text-align: center;
+					position: absolute;
+				    
+				    top: 0;
+				    border-radius: 100%;
+				}
+				&.input_1:nth-child(1) {
+					margin-right: 200px;
+					&:after {
+						content: "\e6b8";
+						right: -78px;
+					}
+				}
+				&.input_1:nth-child(2) {
+					margin-left: 200px;
+					&:after {
+						content: "\e669";
+						left: -78px;
+					}
+				}
+				&.input_1:nth-child(3){
+					margin-right: 200px;
+					&:after {
+						content: "\e642";
+						right: -78px;
+					}
+				}
+				&.input_1:nth-child(4){
+					margin-left: 200px;
+					&:after {
+						content: "\e66a";
+						left: -78px;
+					}
+				}
+				&.input_1:nth-child(5){
+					margin-right: 200px;
+					&:after {
+				        content: "\e652";
+					    right: -78px;
+					}
+				}
+				&.input_1:nth-child(6){
+					margin-left: 200px;
+					&:after {
+						content: "\e6ae";
+	    				left: -78px;
+	    			}
+				}
+			}
+		}
+	}
+}
+
+.testimonial_box {
+	display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    .section_testimonial {
+	    grid-column: 5;
+	    grid-row: 2;
+	    grid-column-start: 1;
+	    grid-column-end: 4;
+	    grid-row-start: 1;
+	    grid-row-end: 3;
+	} 
+	.banner_middle {
+		grid-column-start: 4;
+	    grid-column-end: 6;
+	    grid-row-start: 1;
+	    grid-row-end: 4;
+	}
+}
+.testimo-slider .pt-testimonial .content-des-tes {
+	color: white;
+}
+.testimo-slider .pt-testimonial-container {
+    padding: 150px 0 167px 0;
+}
+.besseller_product .rokan-product-heading h2 {
+    font-size: 40px;
+    color: @menucolor;
+}
+.besseller_product .rokan-product-heading .description {
+ 	color: @searchcatcolor;
+ 	font-size: 14px;
+}
+.besseller_product {
+	margin-top: 80px;
+	.categories_tab {
+		padding: 0;
+	}
+}
+.section-element.banner_middle {
+	margin-top: 24px;
+}
+.section-element.categories_tab {
+    padding: 80px 0 20px;
+}
+.top-content-home .section-element.box-blog {
+	margin-top: 20px;
+}
+
+
+@media (min-width: 1600px){
+	.img_friendly .banner-home2 .content>div {
+		min-width: 490px;
+	}
+	.img_friendly .banner-home2 .content {
+		margin-top: 200px;
+	}
+}
+@media (max-width: 1400px){
+	.testimo-slider .pt-testimonial-container {
+	   padding: 67.5px 0;
+	}
+}
+@media (max-width: 1200px){
+	.img_friendly .banner-home2 {
+		top: 30px;
+	}
+	.img_friendly .banner-home2 .content {
+		margin-top: 0;
+	}
+	.testimonial_box {
+		display: block;
+		.banner_middle .banner_hover img {
+			width: 100%;
+		}
+	}
+	.top-content-home .section-element.box-blog {
+		margin-top: 50px;
+	}
+}
+@media (max-width: 1200px){
+	.img_friendly .banner-home2 .content>div {
+		margin-top: 30px;
+		&.input_1:nth-child(1) {
+			margin-right: 120px;
+		}
+		&.input_1:nth-child(2) {
+			margin-left: 120px;
+		}
+		&.input_1:nth-child(3){
+			margin-right: 120px;
+		}
+		&.input_1:nth-child(4){
+			margin-left: 120px;
+		}
+		&.input_1:nth-child(5){
+			margin-right: 120px;
+		}
+		&.input_1:nth-child(6){
+			margin-left: 120px;
+		}
+	}
+}
+@media (max-width: 768px){
+	.img_friendly {
+		display: none;
+	}
+}

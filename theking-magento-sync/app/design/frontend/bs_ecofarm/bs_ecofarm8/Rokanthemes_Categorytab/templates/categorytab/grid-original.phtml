@@ -1,0 +1,158 @@
+<?php 
+	use Magento\Framework\App\Action\Action;
+	$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+	$storeManager = $_objectManager->get('Magento\Store\Model\StoreManagerInterface'); 
+	$enable = $block->getConfig('enabled');
+	if($enable < 1) return ; 
+	$items = $block->getConfig('items');
+	$speed = $block->getConfig('speed');
+	$qty = $block->getConfig('qty');
+	$showCart = $block->getConfig('addtocart');
+	$showWishlist = $block->getConfig('wishlist');
+	$showCompare = $block->getConfig('compare');
+	$show_navigation = $block->getConfig('navigation');
+	$show_pagination = $block->getConfig('pagination');
+	$auto = $block->getConfig('auto');
+	$rows = $block->getSlideRow();
+	$slide_limit = $block->getSlideLimit();
+	$title = $block->getTitle(); 
+	$description= $block->getDescription(); 
+	$identify = trim($block->getIdentify()); 
+	$categoryIds = $block->getCategoryIds();
+	$categoryIds = explode(',', $categoryIds);	
+	$desktop = $this->getConfig('itemsDesktop');
+	$desktop_small = $this->getConfig('itemsDesktopSmall');
+	$tablet = $this->getConfig('itemsTablet');
+	$mobile = $this->getConfig('itemsMobile');
+?>
+
+<div class="categorytab-container">
+	
+     <?php 
+		
+		$imageBlock =  $block->getLayout()->createBlock('Magento\Catalog\Block\Product\Image');
+		$image = 'category_page_orgrid_m';
+		$type = 'widget-new-grid';
+		$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::DEFAULT_VIEW;
+	?>
+	<div class="row">
+		<div class="col-md-3 col-sm-4 col-xs-12">
+			<?php echo $block->getBannerHomeCategory(); ?>
+		</div>
+		<div class="col-md-9 col-sm-8 col-xs-12">	
+			<div class="content-hotdeal tab-content">
+				<header class='group-title8'>
+					<?php echo '<strong>'.$title.'</strong>'; ?>
+				</header>
+				<div class="tab_container"> 
+				<?php foreach($categoryIds as $cate_id) { 
+					$cate_model =  $block->getCategory($cate_id);
+					$cateName = $cate_model->load($cate_id)->getName();
+					$cateUrl = $cate_model->load($cate_id)->getUrl();
+				?>
+				<div id="tab<?php echo $cate_id.'-'.$identify;?>" class="tab_content_<?php echo $identify; ?> shop-products"> 
+				<div class="owl-container">		
+					<div class="category_tab_slider owl-carousel">
+						<?php 
+						$newItems =  $block -> getProductCate($cate_id)->getItems(); 
+						$i=0;
+						foreach($newItems as $_item) { 
+							$productImage = $block->getImage($_item, $image);
+						?>
+						<?php if($i++%$rows==0) { ?> <div class="product-item-group"> <?php } ?>
+							<div class="product-item">
+								<div class="product-photo product-photo-orgin">
+									<a href="<?php /* @escapeNotVerified */ echo $_item->getProductUrl() ?>" class="product-thumb-link">
+										<?php $productImageThumb = $block->getImage($_item, 'category_page_orgrid_m');?>
+										<?php echo $productImage->toHtml(); ?>
+										
+									</a>			
+														
+								</div>
+								<div class="product-info product-info-rate">
+									<div class="product-name">
+										<strong class="product-item-name">
+											<a title="<?php echo $block->escapeHtml($_item->getName()) ?>"
+											   href="<?php echo $block->getProductUrl($_item) ?>"
+											   class="product-item-link">
+												<?php echo $block->escapeHtml($_item->getName()) ?>
+											</a>
+										</strong>
+									</div>
+								
+									 <?php
+										echo $block->getProductPrice($_item);
+									 ?>
+									<div class="product-ratting">
+											<?php if ($templateType): ?>
+										<?php echo $block->getReviewsSummaryHtml($_item, $templateType,true); ?>
+									<?php endif; ?>
+									</div>
+								</div>
+							</div>
+								<?php if($i%$rows==0 || $i == count($newItems)) { ?> </div> <?php }?>
+						<?php 
+						}
+						?>
+					</div>
+				</div>	
+					
+				</div><!-- #tab1 -->
+				<?php }?>
+
+				</div> <!-- .tab_container --> 
+			</div>
+		</div>
+	</div>
+</div>
+<?php if (!$block->isRedirectToCartEnabled()) : ?>
+	<script type="text/x-magento-init">
+	{
+		"[data-role=tocart-form], .form.map.checkout": {
+			"catalogAddToCart": {}
+		}
+	}
+	</script>
+<?php endif; ?>
+<script type="text/javascript">
+require([
+	'jquery',
+	'mage/mage',
+	'rokanthemes/owl',
+	'rokanthemes/lazyloadimg'
+], function ($) {
+	'use strict';
+
+	jQuery(".tab_content_<?php echo $identify; ?>").hide();
+	jQuery(".tab_content_<?php echo $identify; ?>:first").show(); 
+
+	jQuery("ul.tabs<?php echo '-'.$identify;?> li a").click(function() {
+		jQuery("ul.tabs<?php echo '-'.$identify;?> li").removeClass("active");
+		jQuery(this).closest('li').addClass("active");
+		jQuery(".tab_content_<?php echo $identify; ?>").hide();
+		var activeTab = $(this).closest('li').attr("rel"); 
+		jQuery("#"+activeTab).fadeIn();
+		$("img.lazy").lazyload({
+			skip_invisible: false
+		});
+		return false;
+	});
+	
+	 jQuery(".tab_content_<?php echo $identify; ?> .category_tab_slider").owlCarousel({
+		lazyLoad:true,
+		autoPlay : <?php if($auto) echo 'true'; else echo 'false'; ?>,
+		slideSpeed : <?php if($speed) echo $speed; else echo '500'; ?>,
+		navigation : <?php if($show_navigation) echo 'true'; else echo 'false'; ?>,
+		stopOnHover : true,
+		pagination : <?php if($show_pagination) echo 'true'; else echo 'false'; ?>,
+		items : <?php echo $slide_limit; ?>,
+		itemsDesktop : [1260,<?php echo $desktop; ?>],
+		itemsDesktopSmall : [1199,<?php echo $desktop_small; ?>],
+		itemsTablet: [780,<?php echo $tablet; ?>],
+		itemsMobile : [479,<?php echo $mobile; ?>],
+	});
+	
+});
+ 
+
+</script> 

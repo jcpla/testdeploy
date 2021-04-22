@@ -1,0 +1,242 @@
+.cms-index-index {
+    .verticalmenu.navigation.side-verticalmenu{
+        >ul{
+            border: 2px solid @bordercolor;
+            background: @bkg;
+            position: relative;
+            border-radius: 0 0 5px 5px;
+            .vertical-bg-img {
+                position: absolute;
+                bottom: 0;
+                left: 20px;
+            }
+            li {
+                a {
+                    color: @submenucolor;
+                    font-size: 16px;
+                    font-weight: 400;
+                    font-family: @bdf;
+                }
+                &:hover a{
+                    color: @linkshover;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+.verticalmenu.navigation.side-verticalmenu > ul li.level0:last-child > a{
+    border-bottom: 0;
+}
+.verticalmenu.navigation.side-verticalmenu{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 6px 6px 0 0;
+    .our_categories{
+        background-color: #4e4e4e;
+        color: @bkg;
+        padding: 19px 30px;
+        font-size: 18px;
+        margin: 0;
+        cursor: pointer;
+    }
+    > ul{         
+        li.level0{
+            position: relative;
+            list-style: none;
+            padding: 0 20px;
+            border-bottom: 1px solid @bordercolor;
+            &:last-child{
+                > a{
+                    border-bottom: 0;
+                }
+            }
+            .level0.submenu{
+                padding: 0;
+                left: 120% !important;
+                border: 0;
+                -webkit-transition: all .5s ease;
+                -o-transition: all .5s ease;
+                transition: all .5s ease;
+                border-radius: unset;
+                box-shadow: none;
+                padding: 50px 0 30px;
+                border: 1px solid @bordercolor;
+                box-shadow: 0 5px 13px 0 rgba(0,0,0,.1);
+                -webkit-transition: box-shadow .4s;
+                transition: box-shadow .4s;
+                ul.subchildmenu.mega-columns {
+                    >li {
+                    padding: 0 0 0 40px;
+                    }
+                    .subchildmenu {
+                        padding: 5px 0;
+                    }
+                }
+                .subchildmenu{
+                    > li.level1{
+                        > a{
+                            font-size: 16px;
+                            font-weight: 700;
+                            color: @submenucolor;
+                            margin-bottom: 7px;
+                            text-decoration: none;
+                            border-bottom: 0;
+                            text-transform: capitalize;
+                            font-family: @bdf;
+                            margin: 0 0 20px 0;
+                            padding: 0;
+                            &:before {
+                                content: "";
+                                height: 1px;
+                                background: @linkshover;
+                                display: inline-block;
+                                margin-bottom: 4px;
+                                width: 0;
+                                -webkit-transition: all 400ms ease;
+                                -moz-transition: all 400ms ease;
+                                -ms-transition: all 400ms ease;
+                                -o-transition: all 400ms ease;
+                                transition: all 400ms ease;
+                            }
+                            &:hover{
+                                color: @linkshover;
+                                span{
+                                    text-decoration: none;
+                                }
+                                &:before {
+                                    width: 5px;
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                    > li.level2{
+                        a{  
+                            font-family: @bdf;
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: @submenucolor;
+                            text-decoration: none;
+                            padding: 0;
+                            line-height: 32px;
+                            &:hover{
+                                color: @linkshover;
+                                span{
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            > a{
+                display: inline-block;
+                padding: 12px 0;
+                border: 0;
+                font-family: @bdf;
+                font-size: 16px;
+                line-height: 23px;
+                text-align: left;
+                width: 100%;
+                color: @submenucolor;
+                margin: 0;
+                text-transform: capitalize; 
+                font-weight: 400;
+            }
+            &:hover > a {
+                color: @linkshover;
+                font-weight: 700;
+            }
+            &.parent{
+                > a{
+                    &:after{
+                        content: "\f105";
+                        font-family: 'FontAwesome';
+                        float: right;
+                        line-height: 22px;
+                    }
+                }
+            }
+            &:hover{
+                background: none;
+                .level0.submenu {
+                    left: 100% !important;
+                }
+            }
+            &:last-child{
+                a{
+                    border: 0;
+                }
+            }
+            
+        }
+        li.level0.classic{
+            .level0.submenu{
+                padding: 30px 0 14px 22px;
+                .subchildmenu{
+                    > li.level1{
+                        margin-bottom: 10px;
+                        > a{
+                            font-size: 16px;
+                            font-weight: 700;
+                            color: @submenucolor;
+                            margin: 0;
+                            &:hover{
+                                color: @linkshover;
+                                background: none;
+                                span{
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    a.viewall{
+        padding: 19px 30px;
+        border-top: 1px solid #f0f0f0;
+        margin-top: -1px;
+        width: 100%;
+        font-family: @headingfont;
+        font-size: 13px;
+        font-style: italic;
+        color: @inputtext;
+        text-decoration: underline;
+        display: block;
+    }
+}
+.verticalmenu.navigation.side-verticalmenu>ul li.level0>.open-children-toggle:before {
+    display: none;
+}
+@media (max-width: 767px){
+    .navigation .level0 .submenu .level1.parent .level2.parent a:after, .navigation .level0 .submenu .level1.parent a:after,
+    .verticalmenu.navigation.side-verticalmenu>ul li.level0>.open-children-toggle:before,
+    .verticalmenu.navigation.side-verticalmenu>ul li.level0 .level0.submenu .subchildmenu  li.ui-menu-item .subchildmenu {
+        display: none;
+    }
+}
+.verticalmenu.navigation.side-verticalmenu>ul li.expand-category-link a {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 13px 20px;
+    border: 0;
+    line-height: 23px;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+}
+@media (min-width: 768px), print {
+    .verticalmenu.navigation > ul {
+        position: relative;
+        border: 2px solid @bordercolor;
+        background: @bkg;
+        position: relative;
+        border-radius: 0 0 5px 5px;
+    }
+}

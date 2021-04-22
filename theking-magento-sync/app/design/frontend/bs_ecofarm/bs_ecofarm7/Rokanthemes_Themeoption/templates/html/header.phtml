@@ -1,0 +1,100 @@
+<div class="header-container">
+	<div class="header">
+		<div class="top-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6 text-left contact-header-left">
+						<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('top_bar_left')->toHtml(); ?>
+					</div>
+
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="text-right contact-header-right">
+							<div class="help-top">
+								<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('help_top')->toHtml(); ?>
+							</div>
+							<div class="register-login">
+								<?php if(!$this->helper('Rokanthemes\Themeoption\Helper\Data')->isLoggedIn()){?>
+									<a href="<?php echo $this->helper('Rokanthemes\Themeoption\Helper\Data')->getBaseUrl('customer/account/login/');?>">
+										<i class="icon-users2 lnr lnr-user"></i>
+										<div class="txt-login hidden-sm">
+											<strong><?php echo __('Login');?></strong> <?php echo __('or');?> <span>
+											<strong><?php echo __('Register');?></strong></span>
+										</div>
+									</a>
+									<?php
+								}
+								else{
+								?>	
+								<a href="<?php echo $this->helper('Rokanthemes\Themeoption\Helper\Data')->getBaseUrl('customer/account/logout');?>"><?php echo __('Logout');?></a>
+								<?php } ?>	
+							</div>				
+							
+							<?php if ( $this->getChildHtml("store_language") ): ?>
+								<?php echo $this->getChildHtml("store_language"); ?>
+							<?php endif; ?>
+							<?php if( $this->getChildHtml("currency") ): ?>
+								<?php echo $this->getChildHtml("currency"); ?>
+							<?php endif; ?>
+						</div>							
+					</div>
+				</div>				
+			</div>
+		</div>
+		<div class="header_container head-logo">
+			<div class="header container header_top">
+				<div class="row">
+					<div class="col-md-3 col-xs-12">
+						<div class="col-logo"><?php echo $this->getChildHtml("logo"); ?></div>
+					</div>
+					<div class="col-md-9 col-xs-12">
+						<div class="header_nav_container">
+							<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('hotline_email')->toHtml(); ?>					
+							<?php echo $this->getChildHtml("topSearch");?>
+						</div>
+						<div class="minicart-wrapper">
+							<?php echo $this->getChildHtml("minicart");?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top-nav">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-xs-6 col-sm-3 menu_left_home1">
+						<?php echo $this->getChildHtml("menu.vertical")?>
+						<?php echo $this->getChildHtml("navigation-sections")?>
+						<?php echo $this->getChildHtml("top.navigation.sections"); ?>
+						<div class="logo-sticky"><a href="<?php echo $block->getUrl('');?>" title="<?php echo __('Logo');?>"><img src="<?php echo ($this->helper('Rokanthemes\Themeoption\Helper\Themeconfig')->getStickyLogoHeader() != '') ? $this->helper('Rokanthemes\Themeoption\Helper\Themeconfig')->getStickyLogoHeader() : $this->getViewFileUrl("images/logo_sticky.png");?>" alt="<?php echo __('Logo');?>"/></a></div>
+					</div>
+					<div class="col-md-9 col-sm-12 col-xs-12 col_custommenu">
+						<div class="top-menu">
+				            <?php echo $this->getChildHtml("custom.topnav"); ?>		
+				            <div class="free-shipping">
+								<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('free_shipping')->toHtml(); ?>
+							</div>
+						</div>
+		            </div>	
+		        </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+    require(['jquery'],function($){
+        $(document).ready(function($){
+			$(window).scroll(function() {
+				var num = $('.header-container').outerHeight();
+				var screenWidth = $(window).width();
+				
+				if ($(this).scrollTop() > num && screenWidth >= 320 ){  
+					$(".header").addClass("sticky");
+				}
+				else{
+					$(".header").removeClass("sticky");
+				}
+			});
+		});
+    });
+</script>

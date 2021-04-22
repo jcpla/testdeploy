@@ -1,0 +1,59 @@
+<div class="top-content-home">
+		<div class="banner-slider-top slide1">
+			<?php echo $this->getLayout()->createBlock('Rokanthemes\SlideBanner\Block\Slider')->setslider_id('homepage8slider')->toHtml(); ?>
+		 </div>
+	</div>
+	<div class="list-ads7">
+		<div class="container">
+			<?php  echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('block_home7')->toHtml(); ?>
+		</div>
+	</div>
+	<div class="section-element banner_middles">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middle_home5')->toHtml();?>
+	</div>
+	
+	<div class="section-element categories_tab">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('categories_tab_home8')->toHtml();?>
+	</div>	
+
+	<div class="section-element categories_tab_8">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('categories_tab_1_home8')->toHtml();?>
+		</div>
+	</div>
+	<div class="section-element categories_tab_8">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('categories_tab_2_home8')->toHtml();?>
+		</div>
+	</div>
+	<div class="section-element categories_tab_8">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('categories_tab_3_home8')->toHtml();?>
+		</div>
+	</div>
+	<div class="section-element categories_tab_8">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('categories_tab_4_home8')->toHtml();?>
+		</div>
+	</div>
+
+	<div class="section-element section-brands">
+		<div class="container">
+			<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('brand-logo')->toHtml(); ?>
+		</div>
+	</div>
+
+	<div class="section-element box-blog">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Rokanthemes\Blog\Block\Sidebar\Recent')->setTemplate('Rokanthemes_Blog::sidebar/slider.phtml')->toHtml();?>
+		</div>
+	</div>
+	
+	<div class="banner_mid_h1">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_mid_home1')->toHtml();?>
+	</div>
+	<div class="section-element banner_bottom">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_bottom_home6')->toHtml();?>
+	</div>
+
+</div>

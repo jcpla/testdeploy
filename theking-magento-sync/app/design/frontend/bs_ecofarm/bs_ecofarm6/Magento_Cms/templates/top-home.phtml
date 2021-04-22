@@ -1,0 +1,49 @@
+<div class="top-content-home">
+	<div class="banner-slider-top slide1">
+		<div class="banner-slider banner-slider1">
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('youtube_home6')->toHtml();?>
+		</div>
+	</div>
+
+	<div class="section-element banner_middles">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middle_home5')->toHtml();?>
+	</div>
+	<div class="hot-deal">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Rokanthemes\Superdeals\Block\ProductByCat')->setTemplate('Rokanthemes_Superdeals::category.phtml')->toHtml();?>
+		</div>
+	</div>
+	<div class="section-element banner_middles_h6">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top_home5')->toHtml();?>
+	</div>
+	<div class="section-element categories_tab">
+		<div class="container">
+			<div  class="row">
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('categories_tab_home1')->toHtml();?>
+			</div>
+		</div>
+	</div>
+	<div class="section-element section-brands">
+		<div class="container">
+			<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('brand-logo')->toHtml(); ?>
+		</div>
+	</div>
+
+	<div class="section-element box-blog">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Rokanthemes\Blog\Block\Sidebar\Recent')->setTemplate('Rokanthemes_Blog::sidebar/slider.phtml')->toHtml();?>
+		</div>
+	</div>
+	
+
+	<div class="section-element section_testimonial">
+		<?php echo $block->getLayout()->createBlock('Rokanthemes\Testimonial\Block\Testimonial')->setTemplate('Rokanthemes_Testimonial::testimonial.phtml')->toHtml();?>
+	</div>
+	<div class="section-element banner_middles">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middle_home2')->toHtml();?>
+	</div>
+	<div class="section-element banner_bottom">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_bottom_home6')->toHtml();?>
+	</div>
+
+</div>

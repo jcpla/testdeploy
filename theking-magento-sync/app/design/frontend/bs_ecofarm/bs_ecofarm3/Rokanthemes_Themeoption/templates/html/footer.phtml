@@ -1,0 +1,56 @@
+<div id="back-top" class=""><i class="fa fa-angle-double-up"></i></div>
+<div class="footer-container">
+	<div class="section-newsletter">
+		<div class="container">
+			<?php  echo $this->getLayout()->createBlock('Magento\Newsletter\Block\Subscribe')->setTemplate('Magento_Newsletter::subscribe.phtml')->toHtml(); ?>
+		</div>
+	</div>
+	<div class="footer-static-container">
+		<div class="container">
+			<div class="wrapper_footer_static">
+				<div class="row">
+					<div class="col-sm-12 col-md-7">
+						<div class="footer_static">
+							<div class="row">
+								<?php echo $this->getChildHtml("footer_static"); ?>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-5">
+						<div class="section-footerright">
+							<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_right')->toHtml(); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-6"> 
+					<div class="copyright">
+						<?php  echo $this->getLayout()->createBlock("Rokanthemes\Themeoption\Block\Customcss")->setTemplate("html/copyright.phtml")->toHtml() ?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6"> 
+					<div class="footer_menu">
+					<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_link_menu')->toHtml(); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	window.onload = function () {
+		document.body.className += " preloaded";
+	}
+</script>
+<?php
+	$data = $block->getConfig('themeoption');
+?>
+<?php if (isset($data['general']['rtl']) && $data['general']['rtl'] == 1){ ?>
+<link rel="stylesheet" type="text/css" href="<?php echo $block->getViewFileUrl('css/organix-rtl.css')?>">
+<?php } ?>

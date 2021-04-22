@@ -1,0 +1,53 @@
+<div class="top-content-home">
+	<div class="banner_top_home4">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('wellcome_home4')->toHtml();?>
+	</div>
+	<div class="section-element categories_tab">
+		<div class="container">
+			<div class="row">
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('categories_tab_home1')->toHtml();?>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-element banner_middles">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middle_home2')->toHtml();?>
+	</div>
+
+	<div class="group_home4">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-3">
+					<?php echo $block->getLayout()->createBlock('Rokanthemes\Onsaleproduct\Block\Onsaleproduct')->setTemplate('Rokanthemes_Onsaleproduct::onsaleproduct.phtml')->toHtml();?> 
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<?php echo $block->getLayout()->createBlock('Rokanthemes\Featuredpro\Block\Featured')->setTemplate('Rokanthemes_Featuredpro::featured.phtml')->toHtml();?> 
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<?php echo $block->getLayout()->createBlock('Rokanthemes\Newproduct\Block\Newproduct')->setTemplate('Rokanthemes_Newproduct::newproduct.phtml')->toHtml();?>  
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<?php echo $block->getLayout()->createBlock('Rokanthemes\BestsellerProduct\Block\Bestseller')->setTemplate('Rokanthemes_BestsellerProduct::bestseller.phtml')->toHtml();?> 
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="section-element section_testimonial">
+		<?php echo $block->getLayout()->createBlock('Rokanthemes\Testimonial\Block\Testimonial')->setTemplate('Rokanthemes_Testimonial::testimonial.phtml')->toHtml();?>
+	</div>
+
+	<div class="section-element box-blog">
+		<div class="container">
+			<?php echo $block->getLayout()->createBlock('Rokanthemes\Blog\Block\Sidebar\Recent')->setTemplate('Rokanthemes_Blog::sidebar/slider.phtml')->toHtml();?>
+		</div>
+	</div>
+
+	<div class="section-element section-brands">
+		<div class="container">
+			<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('brand-logo')->toHtml(); ?>
+		</div>
+	</div>
+
+</div>

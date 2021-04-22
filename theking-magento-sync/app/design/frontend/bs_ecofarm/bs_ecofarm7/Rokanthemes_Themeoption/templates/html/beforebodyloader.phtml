@@ -1,0 +1,48 @@
+<?php 
+	$data = $block->getConfig();
+?>
+<?php if (isset($data['general']['enable_preloaded']) && $data['general']['enable_preloaded'] == 1){ ?>
+<div class="line-scale-pulse-out hide">
+	<div class="hide"></div>
+	<div class="hide"></div>
+	<div class="hide"></div>
+	<div class="hide"></div>
+	<div class="hide"></div>
+</div>
+<script type="text/javascript">
+require([
+		'jquery'
+	], function ($) {
+		'use strict';
+		$(window).load(function() {
+			$('#loading-fixed').delay(500).fadeOut('slow');
+		});
+		$( document ).ready(function() {
+			var myVarloader = setInterval(function(){ setLoaderTime() }, 1000);
+			function setLoaderTime() {
+				$('#loading-fixed').delay(500).fadeOut('slow');
+				clearInterval(myVarloader);
+			}
+		});
+});
+</script>
+<?php } ?>
+<style>
+.line-scale-pulse-out{
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999999;
+    margin-top: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	  display: -ms-flexbox;      /* TWEENER - IE 10 */
+	  display: -webkit-flex;     /* NEW - Chrome */
+	  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+</style>

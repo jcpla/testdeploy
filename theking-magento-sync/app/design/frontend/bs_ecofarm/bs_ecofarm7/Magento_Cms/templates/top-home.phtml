@@ -1,0 +1,84 @@
+<div class="top-content-home">
+		<div class="container">
+		<div class="row">
+			 <div class="col-md-3">
+			 </div>
+			<div class="col-md-9 col-sm-12 col-xs-12">
+				<div class="banner-slider-top slide1">
+					<?php echo $this->getLayout()->createBlock('Rokanthemes\SlideBanner\Block\Slider')->setslider_id('homepage7slider')->toHtml(); ?>
+				 </div>
+			</div>
+		</div>
+	</div>
+	<div class="section-element banner_middles">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middle_home5')->toHtml();?>
+	</div>
+	<div class="col_h7_left">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-3">
+					<div class="list-ads7">
+						<?php  echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('block_home7')->toHtml(); ?>
+					</div>
+					
+					<div class="list-ads1">
+						<?php  echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_top')->toHtml(); ?>
+					</div>
+					<div class="group_home4">
+						<?php echo $block->getLayout()->createBlock('Rokanthemes\Onsaleproduct\Block\Onsaleproduct')->setTemplate('Rokanthemes_Onsaleproduct::onsaleproduct.phtml')->toHtml();?> 
+					</div>
+					<div class="section-element box-blog">
+						<?php echo $block->getLayout()->createBlock('Rokanthemes\Blog\Block\Sidebar\Recent')->setTemplate('Rokanthemes_Blog::sidebar/slider.phtml')->toHtml();?>
+					</div>
+					<div class="section-instagram">
+						<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('instagram')->toHtml(); ?>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-9">
+					<div class="hot-deal">
+						<?php echo $block->getLayout()->createBlock('Rokanthemes\Superdeals\Block\ProductByCat')->setTemplate('Rokanthemes_Superdeals::category.phtml')->toHtml();?>
+					</div>
+					<div class="section-element categories_tab">
+						<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('categories_tab_home7')->toHtml();?>
+					</div>	
+					<div class="section-element banner_middles_h7">
+						<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middles_home7')->toHtml();?>
+					</div>
+					<div class="group_home4">
+						<div class="row">
+							<div class="col-sm-12 col-md-4">
+								<?php echo $block->getLayout()->createBlock('Rokanthemes\Featuredpro\Block\Featured')->setTemplate('Rokanthemes_Featuredpro::featured.phtml')->toHtml();?> 
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<?php echo $block->getLayout()->createBlock('Rokanthemes\Newproduct\Block\Newproduct')->setTemplate('Rokanthemes_Newproduct::newproduct.phtml')->toHtml();?>  
+							</div>
+							<div class="col-sm-12 col-md-4">
+								<?php echo $block->getLayout()->createBlock('Rokanthemes\BestsellerProduct\Block\Bestseller')->setTemplate('Rokanthemes_BestsellerProduct::bestseller.phtml')->toHtml();?> 
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	
+	
+
+	<div class="section-element section-brands">
+		<div class="container">
+			<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('brand-logo')->toHtml(); ?>
+		</div>
+	</div>
+
+	<div class="section-element banner_middles">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_middle_home2')->toHtml();?>
+	</div>
+	<div class="section-element banner_bottom">
+		<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('banner_bottom_home6')->toHtml();?>
+	</div>
+
+</div>
